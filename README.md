@@ -27,7 +27,7 @@ conda create -n mp python=3.6.10
 conda activate mp
 conda install samtools==0.1.18 bedtools==2.27.1
 
-# git clone MegaPath-Nano
+# git clone MegaPath
 git clone --depth 1 https://github.com/edwwlui/MegaPath
 
 make -C MegaPath/megahit/
@@ -40,7 +40,7 @@ make -C MegaPath/soap4/
 ```
 # Option 1, Bioconda: cd ${CONDA_PREFIX}/MegaPath
 # conda info --env can show the ${CONDA_PREFIX} in the current environment.
-# Option 2, Conda Virtual Env: cd ./MegaPath (the git clone)
+# Option 2, Conda virtual env: cd ./MegaPath (the git clone)
 cd ${MEGAPATH_DIR}
 wget http://www.bio8.cs.hku.hk/dataset/MegaPath/MegaPath_db.v1.0.tar.gz
 tar -xvzf MegaPath_db.v1.0.tar.gz
