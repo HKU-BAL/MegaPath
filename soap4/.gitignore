@@ -1,0 +1,14 @@
+*.o
+VERSION.h
+.*.cpp
+err
+out
+soap4
+*.dpout.1
+*.gout.*
+*.unpair
+*.done
+*.out
+*.log
+*.benchmark
+
