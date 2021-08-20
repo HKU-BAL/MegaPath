@@ -18,8 +18,8 @@ HC_INI=${SCRIPT_PATH}/soap4/soap4-nt2.ini
 RIBO_INI=${SCRIPT_PATH}/soap4/soap4.ini
 
 ACD_TMP=/tmp/
-SAMTOOLS=${SCRIPT_PATH}/samtools-0.1.18/samtools
-BEDTOOLS=${SCRIPT_PATH}/bedtools2/bin/bedtools
+SAMTOOLS=samtools
+BEDTOOLS=bedtools
 TAX_LOOKUP=${SCRIPT_PATH}/cc/taxLookupAcc
 DEINTERLEAVE=${SCRIPT_PATH}/cc/deinterleave
 FASTQ2LSAM=${SCRIPT_PATH}/cc/fastq2lsam
