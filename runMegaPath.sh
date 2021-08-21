@@ -8,7 +8,7 @@ SCRIPT=$(readlink -f $0)
 SCRIPT_PATH=$(dirname ${SCRIPT})
 
 # configurations
-MEGAHIT=${SCRIPT_PATH}/megahit/megahit
+MEGAHIT=megahit
 ACD=${SCRIPT_PATH}/ac-diamond-0.1-beta-linux64/ac-diamond
 SOAP4=${SCRIPT_PATH}/soap4/soap4
 SOAP4_BUILD=${SCRIPT_PATH}/soap4/2bwt-lib/2bwt-builder

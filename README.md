@@ -25,12 +25,11 @@ conda config --add channels conda-forge
 
 conda create -n mp python=3.6.10
 conda activate mp
-conda install samtools==0.1.18 bedtools==2.27.1
+conda install samtools==0.1.18 bedtools==2.27.1 megahit==1.1.3
 
 # git clone MegaPath
 git clone --depth 1 https://github.com/edwwlui/MegaPath
 
-make -C MegaPath/megahit/
 make -C MegaPath/soap4/2bwt-lib/
 make -C MegaPath/soap4/
 ```
