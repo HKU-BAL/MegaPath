@@ -5,6 +5,9 @@ Sensitive and rapid pathogen detection using metagenomic NGS data
 
 ## Prerequisites
 
+Memory requirement: ~100G
+Storage requirement: ~240G
+
 ## Option 1: Bioconda
 ```
 # prioritize channels
