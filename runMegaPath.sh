@@ -107,7 +107,7 @@ ACC2TID=${DB}/tax/abhv_complete_genome_fungi_and_protozoa_and_fungiUnite.accessi
 
 # 0. preprocessing
 if [ -e ${PREFIX}.prep.done ]; then
-	echo "Skipping host filtering";
+	echo "Skipping preprocessing";
 else
 	echo "[TIMESTAMP] $(date) Running BBDuk to preprocess..."
 	STARTTIME=$(date +%s)
