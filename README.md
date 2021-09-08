@@ -38,7 +38,7 @@ conda config --add channels conda-forge
 conda create -n mp python=3.6.10
 conda activate mp
 # MegaPath
-conda install samtools==0.1.18 bedtools==2.27.1 megahit==1.1.3
+conda install samtools==1.10 bedtools==2.27.1 megahit==1.1.3
 # MegaPath-Amplicon
 conda install gatk4 pandas pysam pysam=0.16.0.1 bwa=0.7.12 pypy3.6 parallel=20191122 seqtk
 
