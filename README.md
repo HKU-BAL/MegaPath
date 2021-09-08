@@ -1,17 +1,19 @@
 [![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
 
 # MegaPath
-Sensitive and rapid pathogen detection using metagenomic NGS data. MegaPath-Amplicon: filtering module for metagenomic amplicon data.
+Sensitive and rapid pathogen detection using metagenomic NGS data; MegaPath-Amplicon: filtering module for metagenomic amplicon data.
 
 ## Prerequisites
 
 Requirements:
 
 MegaPath
+
 Memory: 100G
 Storage: 250G
 
 MegaPath-Amplicon
+
 Memory: 400G
 Storage: 450G
 
