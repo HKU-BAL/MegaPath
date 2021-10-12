@@ -46,6 +46,7 @@ conda install gatk4 pandas pysam pysam=0.16.0.1 bwa=0.7.12 pypy3.6 parallel=2019
 git clone --depth 1 https://github.com/edwwlui/MegaPath
 
 # MegaPath
+make -C MegaPath/cc/
 make -C MegaPath/soap4/2bwt-lib/
 make -C MegaPath/soap4/
 
