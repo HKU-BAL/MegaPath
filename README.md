@@ -65,9 +65,11 @@ gcc -Wall -O3 -pipe -fPIC -shared -rdynamic -o libssw.so ssw.c ssw.h
 # Option 2, Conda virtual env: cd ./MegaPath (the git clone)
 cd ${MEGAPATH_DIR}
 # MegaPath db
-wget -c http://www.bio8.cs.hku.hk/dataset/MegaPath/MegaPath_db.v1.0.tar.gz -O - | tar -xvz
+wget -c http://www.bio8.cs.hku.hk/dataset/MegaPath/MegaPath_db.v1.0.tar.gz
+tar -xvzf MegaPath_db.v1.0.tar.gz
 # MegaPath-Amplicon db
-wget -c http://www.bio8.cs.hku.hk/dataset/MegaPath/MegaPath-Amplicon_db.v1.0.tar.gz -O - | tar -xvz
+wget -c http://www.bio8.cs.hku.hk/dataset/MegaPath/MegaPath-Amplicon_db.v1.0.tar.gz
+tar -xvzf MegaPath_db.v1.0.tar.gz
 
 ```
 
