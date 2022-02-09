@@ -18,7 +18,7 @@ HC_INI=${SCRIPT_PATH}/soap4/soap4-nt2.ini
 RIBO_INI=${SCRIPT_PATH}/soap4/soap4.ini
 
 ACD_TMP=/tmp/
-SAMTOOLS=samtools
+SAMTOOLS=${SCRIPT_PATH}/soap4/samtools-0.1.18/samtools
 BEDTOOLS=bedtools
 TAX_LOOKUP=${SCRIPT_PATH}/cc/taxLookupAcc
 DEINTERLEAVE=${SCRIPT_PATH}/cc/deinterleave
@@ -39,6 +39,7 @@ BBNORM=${BBMAP_DIR}/bbnorm.sh
 BBDUK=${BBMAP_DIR}/bbduk2.sh
 
 DB=${SCRIPT_PATH}/db
+DB=/autofs/nas5/yxin/megapath/db
 
 export PATH=${SCRIPT_PATH}:${PATH}
 
@@ -63,7 +64,7 @@ while getopts "p:1:2:t:c:s:o:L:d:M:SHA" option; do
         o) SPIKE_OVERLAP=${OPTARG};;
 		L) READ_LEN=${OPTARG};;
 		d) DB=${OPTARG};;
-		S) NO_RIBO=true;;
+		S) DO_RIBO=true;;
 		H) NO_HG=true;;
 		A) DO_ASM=true;;
 		*) exit 1;;
@@ -90,7 +91,7 @@ if [ -z "${READ1}" ] || [ -z "${READ2}" ]; then
    echo "    -o  SPIKE overlap [0.5]"
    echo "    -L  max read length [150]"
    echo "    -d  database directory [${SCRIPT_PATH}/db]"
-   echo "    -S  skip ribosome filtering"
+   echo "    -S  Perform ribosome filtering"
    echo "    -H  skip human filtering"
    echo "    -A  Perform assembly & protein alignment"
    exit 1
@@ -156,7 +157,7 @@ fi
 if [ -e ${PREFIX}.ribosome.done ]; then
 	echo "Skipping Ribo cleaning";
 else
-	if [ -z ${NO_RIBO} ]; then
+	if [ ! -z ${DO_RIBO} ]; then
 		STARTTIME=$(date +%s)
 		echo "[TIMESTAMP] $(date) Mapping reads to 16S DB..."
 		/usr/bin/time -v ${SOAP4} pair ${SOAP_16S_IDX} ${PREFIX}.non_hg.pe_1.fq ${PREFIX}.non_hg.pe_2.fq -o ${PREFIX}.dummy -C ${RIBO_INI} -L ${READ_LEN} -T ${THREADS} -u 750 -F -P -nc -top 100 | ${FASTQ2LSAM} | ${EXTRACT_FROM_LSAM} -t 0.95 - | ${DEINTERLEAVE} ${PREFIX}.non_ribo
@@ -177,7 +178,7 @@ else
 	i=0
 	rm -f ${PREFIX}.nt.tmp_out.pe_1.fq ${PREFIX}.nt.tmp_out.pe_2.fq
 
-	if [ ${NO_RIBO} ]; then
+	if [ -z ${DO_RIBO} ]; then
 		NT_INPUT_1=${PREFIX}.non_hg.pe_1.fq
 		NT_INPUT_2=${PREFIX}.non_hg.pe_2.fq
 	else

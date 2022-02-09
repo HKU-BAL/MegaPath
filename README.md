@@ -38,9 +38,9 @@ conda config --add channels conda-forge
 conda create -n mp python=3.6.10
 conda activate mp
 # MegaPath
-conda install samtools==1.10 bedtools==2.27.1 megahit==1.1.3
+conda install bedtools==2.27.1 megahit==1.1.3
 # MegaPath-Amplicon
-conda install gatk4 pandas pysam pysam=0.16.0.1 bwa=0.7.12 pypy3.6 parallel=20191122 seqtk
+conda install samtools==1.10 gatk4 pandas pysam pysam=0.16.0.1 bwa=0.7.12 pypy3.6 parallel=20191122 seqtk
 
 # git clone MegaPath
 git clone --depth 1 https://github.com/edwwlui/MegaPath
@@ -69,7 +69,7 @@ wget -c http://www.bio8.cs.hku.hk/dataset/MegaPath/MegaPath_db.v1.0.tar.gz
 tar -xvzf MegaPath_db.v1.0.tar.gz
 # MegaPath-Amplicon db
 wget -c http://www.bio8.cs.hku.hk/dataset/MegaPath/MegaPath-Amplicon_db.v1.0.tar.gz
-tar -xvzf MegaPath_db.v1.0.tar.gz
+tar -xvzf MegaPath-Amplicon_db.v1.0.tar.gz
 
 ```
 
@@ -91,12 +91,13 @@ Usage: ./runMegaPath-Amplicon.sh -1 <read1.fq> -2 <read2.fq> [options]
     -p  output prefix [megapath-amplicon]
     -t  number of threads [24]
     -L  max read length [250]
-    -d  database directory [/autofs/bal13/wwlui/bioconda/test_mp/test/MegaPath/db]
+    -d  database directory [./MegaPath/db]
 ```
 
 ## Advanced usage for MegaPath-Amplicon
 ```
-Keep BWA index in memory to significantly speed up batch-run
+# Keep BWA index in memory to significantly speed up batch-run
+
 # load indices
 bwa shm ${CONDA_PREFIX}/MegaPath/db/amplicon/GCF_000001405.39_GRCh38.p13_genomic.fna.gz &
 bwa shm ${CONDA_PREFIX}/MegaPath/db/amplicon/Mycobacterium_tuberculosis_H37Rv_genome_v3.fasta &
