@@ -83,7 +83,7 @@ Usage: ./runMegaPath.sh -1 <read1.fq> -2 <read2.fq> [options]
     -o  SPIKE overlap [0.5]
     -L  max read length [150]
     -d  database directory
-    -S  skip ribosome filtering
+    -S  Perform ribosome filtering
     -H  skip human filtering
     -A  Perform assembly & protein alignment
 
