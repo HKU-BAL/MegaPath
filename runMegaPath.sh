@@ -39,7 +39,6 @@ BBNORM=${BBMAP_DIR}/bbnorm.sh
 BBDUK=${BBMAP_DIR}/bbduk2.sh
 
 DB=${SCRIPT_PATH}/db
-DB=/autofs/nas5/yxin/megapath/db
 
 export PATH=${SCRIPT_PATH}:${PATH}
 
